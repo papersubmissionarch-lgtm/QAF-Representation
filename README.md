@@ -10,10 +10,9 @@ Dynamo (version 2.5)
 Contents:
 
 .dyn files: Main rule-checking scripts
-.rvt file: Revit model containing:
+.rvt files: Revit model containing:
 Essential façade components used for rule execution
-Hypothetical benchmark façade cases developed for controlled testing
-Real-world case-study façades used for validation
+Real-world and Hypothetical benchmark façade cases developed for controlled testing
 
 Usage Instructions:
 
