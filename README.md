@@ -39,25 +39,21 @@ The implementation is provided as a research proof-of-concept developed in Autod
 
 | File | Description |
 |---|---|
-| `Data/Respondent_Responses_All_Anonymised.xlsx` | Anonymised respondent-level questionnaire responses before screening. |
-| `Data/Respondent_Screening_Log_Anonymised.xlsx` | Anonymous respondent IDs, inclusion status, and exclusion criteria applied during response screening. |
-| `Data/Respondent_Responses_Retained.xlsx` | Analysis-ready responses from the 59 retained respondents. |
-| `Data/External_Comparison_Summary.xlsx` | BIM-generated values, Group 1 medians, Group 2 medians, rank-association results, and value-difference metrics for the evaluated façade cases. |
-| `Data/Data_Dictionary.xlsx` | Definitions, value labels, units, missing-value conventions, and descriptions of all variables contained in the shared datasets. |
+| `Questionnaire Responses (Group 1).xlsx` | Anonymised respondent-level data for Group 1, who evaluated the façade cases using 3D isometric representations. The file contains respondents’ professional characteristics, QAF ratings for all benchmark and real-world façade cases, summary statistics, BIM-generated values, rank-based comparison results, and value-difference metrics. Responses excluded during screening are retained in a separately identified section. |
+| `Questionnaire Responses (Group 2).xlsx` | Anonymised respondent-level data for Group 2, who evaluated the façade cases using 2D elevation representations. The file contains respondents’ professional characteristics, QAF ratings for all benchmark and real-world façade cases, summary statistics, BIM-generated values, rank-based comparison results, and value-difference metrics. Responses excluded during screening are retained in a separately identified section. |
 
 ## Software Requirements
 
 The implementation was developed and tested using:
 
-- Autodesk Revit 2026
-- Dynamo for Revit included with Autodesk Revit 2026
-- Microsoft Excel or equivalent spreadsheet software for viewing the supporting datasets
+- Autodesk Revit 2021
+- Dynamo for Revit included with Autodesk Revit 2021
 
 The Dynamo graphs use standard Dynamo and Revit nodes only.
 
 No Python nodes or external Dynamo packages are required.
 
-Because Revit model files are version-dependent, users should open the supplied `.rvt` files using Revit 2026 or a later compatible version.
+Because Revit model files are version-dependent, users should open the supplied `.rvt` files using Revit 2021 or a later compatible version.
 
 ## Model Preparation Requirements
 
