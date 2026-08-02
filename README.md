@@ -65,40 +65,17 @@ The façade to be evaluated must be isolated within the dedicated Revit view:
 
 `QAFs Representation`
 
-Only elements visible within this view should contribute to the evaluation. When applying the scripts to another model, create a view with the same name and configure its visibility settings to isolate the target façade and its associated components.
+Only elements visible within this view should contribute to the evaluation.
 
 ### Component Classification
 
 The shared type parameter `TypeOfComponent` is used as a consistent classification key across native and extended Revit modelling approaches.
 
-The prototype implementation uses the following values:
-
-- `Window`
-- `Door`
-- `CurtainWall`
-- `FrenchWindow`
-- `Balcony`
-- `Canopy`
-- `VerticalSolidExtrusion`
-- `HorizontalSolidExtrusion`
-
-These values should be preserved exactly when the scripts are applied to other models.
-
 ### Required Parameters
 
-Depending on the QAF procedure, the scripts use the following model parameters:
-
-- `TypeOfComponent`
-- `Symmetrical`
-- Decomposition-level parameters for complexity evaluation
-- `GroupDepth`
-- `GroupWidth`
-- `Level` or `Reference Level`
-- Component width and height parameters where applicable
+Depending on the QAF procedure, the scripts use specific model parameters.
 
 The prototype components supplied in `QAF Components.rvt` already contain the required custom parameters.
-
-Native and derived geometric information—including element IDs, centroids, bounding boxes, areas, and volumes—is queried or calculated automatically by the Dynamo scripts and does not require manual entry.
 
 Parameter names used by the Dynamo graphs should not be renamed unless the corresponding parameter-retrieval nodes are also updated.
 
@@ -115,17 +92,6 @@ Parameter names used by the Dynamo graphs should not be renamed unless the corre
 7. Run the Dynamo graph.
 8. Review the numerical output and any graphical verification geometry generated in the Revit viewport.
 
-### Using the Scripts with Another Revit Model
-
-1. Create or identify the façade components required by the selected QAF procedure.
-2. Bind the required shared parameters to the relevant Revit categories.
-3. Assign the appropriate `TypeOfComponent` value to each component type.
-4. Assign the required level, symmetry, and decomposition parameters.
-5. Create a dedicated view named `QAFs Representation`.
-6. Isolate the target façade and its associated components in this view.
-7. Open and run the relevant Dynamo script.
-8. Check intermediate graphical outputs before interpreting the final metric value.
-
 The supplied scripts assume the modelling and classification conventions described above. Application to models using different categories, parameter names, units, or modelling strategies may require modification of the element-selection and parameter-retrieval nodes.
 
 ## Computational Outputs
@@ -136,7 +102,7 @@ The regularity script outputs a normalised regularity value:
 
 `R%`
 
-The value is derived from the metric Shannon entropy of directional nearest-neighbour centre-to-centre distances between façade window instances. Higher values indicate greater consistency in the spacing relationships represented by the adopted metric.
+The script also generates graphical outputs showing centre-to-centre distances between window instances.
 
 ### Symmetry-Based Balance
 
@@ -144,17 +110,13 @@ The symmetry-based balance script outputs:
 
 `SBB%`
 
-The value represents the total area of elements contributing to symmetry around the selected principal vertical axis divided by the total area of the evaluated façade elements.
-
-The script also generates graphical outputs showing candidate axes, the selected principal axis, and symmetry-contributing elements.
+The script also generates graphical outputs showing symmetry-contributing elements and all facade elements.
 
 ### Diversity
 
 The diversity script outputs:
 
 `D%`
-
-The raw diversity value is calculated using perplexity based on the relative frequencies of façade component types. It is normalised using the maximum raw diversity value observed in the pooled calibration dataset:
 
 `PPmax = 20.07`
 
@@ -163,8 +125,6 @@ The raw diversity value is calculated using perplexity based on the relative fre
 The complexity script outputs:
 
 `C%`
-
-The raw complexity score aggregates non-redundant compositional groups across the implemented hierarchical decomposition levels. It is normalised using the maximum raw complexity value observed in the pooled calibration dataset:
 
 `Cmax = 68`
 
@@ -201,25 +161,11 @@ The external-comparison dataset contains architects’ visual assessments of the
 - Group 1: 3D isometric views
 - Group 2: 2D elevations
 
-The shared data files distinguish between:
-
-- Raw anonymised responses
-- Screening decisions
-- Retained analysis responses
-- Case-level median ratings
-- BIM-generated metric values
-- Rank-based comparison statistics
-- Value-difference metrics
-
-The external comparison examined correspondence between BIM-derived metrics and architects’ perceptual ratings. It should not be interpreted as validating one source as a ground truth against the other.
-
 ## Data Anonymisation
 
 All publicly shared respondent data have been anonymised.
 
-Direct identifying information, including names, email addresses, contact details, institutional identifiers, and original submission timestamps, has been removed. Respondents are represented using randomly assigned anonymous identifiers that cannot be linked to the original questionnaire records through the files provided in this repository.
-
-Potential indirect identifiers have been removed or generalised where necessary to reduce re-identification risk. The datasets retain only the variables required to reproduce the screening procedure, descriptive respondent characteristics, and statistical comparisons reported in the manuscript.
+Direct identifying information, including names, email addresses, contact details, institutional identifiers, and original submission timestamps, has been removed. The datasets retain only the variables required to reproduce the screening procedure, descriptive respondent characteristics, and statistical comparisons reported in the manuscript.
 
 ## Reproducibility Notes
 
@@ -252,10 +198,6 @@ The repository does not currently provide:
 This repository accompanies a manuscript currently under anonymous peer review.
 
 Citation details will be added following publication.
-
-Until publication, the repository may be cited as:
-
-> Anonymous authors. BIM-Based Representation of Façade-Related Qualitative Architectural Features: Dynamo Scripts, Revit Models, and External-Comparison Data. Research repository, 2026.
 
 ## Licence
 
