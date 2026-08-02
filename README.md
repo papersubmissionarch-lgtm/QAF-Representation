@@ -1,6 +1,6 @@
 Repository for Dynamo Scripts – QAF Implementation
 
-This repository contains the Dynamo scripts developed for implementing the computational representation of Quantitative Aesthetic Features (QAFs) presented in this thesis. In addition, a Revit model file is provided to support reproducibility and facilitate direct application of the scripts.
+This repository contains the Dynamo scripts developed for implementing the computational representation of Quantitative Architectural Features (QAFs) presented in this paper. In addition, a Revit model file is provided to support reproducibility and facilitate direct application of the scripts.
 
 Minimum Requirements:
 
