@@ -143,8 +143,8 @@ The prototype implementation uses the following numerical settings:
 | Symmetry-based balance | On-axis positional tolerance | 0.15 m |
 | Symmetry-based balance | Mirrored-element matching tolerance | 0.35 m |
 | Regularity | Directional-distance rounding increment | 2 decimal places |
-| Complexity | `GroupDepth` threshold | case-specific |
-| Complexity | `GroupWidth` threshold | case-specific |
+| Complexity | `GroupDepth` threshold | case-specific segmentation controls. Values must be selected according to the façade decomposition; tested reference-consistent ranges are documented in the sensitivity-analysis dataset and Appendix D. |
+| Complexity | `GroupWidth` threshold | case-specific segmentation controls. Values must be selected according to the façade decomposition; tested reference-consistent ranges are documented in the sensitivity-analysis dataset and Appendix D. |
 
 The symmetry and regularity settings accommodate minor geometric inaccuracies in the prototype models. The complexity thresholds were selected according to the dimensional characteristics of the benchmark and real-world façade cases used in the study.
 
