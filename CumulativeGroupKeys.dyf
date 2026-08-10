@@ -1,0 +1,281 @@
+{
+  "Uuid": "a53af6b5-efce-4e31-aff7-9c8f14a00828",
+  "IsCustomNode": true,
+  "Category": "Clockwork",
+  "Description": "",
+  "Name": "CumulativeGroupKeys",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Autodesk.DesignScript.Geometry.Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "List": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "InputValue": 0.0,
+      "Id": "5e360f77bd6640af8f57c21869bc48d2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e4f9f3b452594000aa58b78901e29c87",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "+@var[]..[],var[]..[]",
+      "Id": "a8e06e96591a445f9240027664acc8b4",
+      "Inputs": [
+        {
+          "Id": "6f697746f1954349b001237b8cde72b1",
+          "Name": "x",
+          "Description": "x value.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3ed015c46e224a75acae2297fbbbbd1e",
+          "Name": "y",
+          "Description": "y value.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "40fe09338bb94f048b39b7dd9b0f489f",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Adds x to y.\n\n+ (x: var[]..[], y: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.ScanList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "6679dd6ba3044c1da202221b867751b3",
+      "Inputs": [
+        {
+          "Id": "050ec832aeb1455a95f382782f73d90f",
+          "Name": "reductor",
+          "Description": "Reductor Function: accepts one item from each list being reduced, and the current accumulated value, result is the new accumulated value.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0fb7a1e7ab20408aa4f020b8481b78e4",
+          "Name": "seed",
+          "Description": "Starting accumulated value, to be passed into the first call to the Reductor function.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c8eb92c5f4334f3f9849719f246aaec9",
+          "Name": "list1",
+          "Description": "List #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "39848062b8d546f0bec7a1fb61534852",
+          "Name": "scanned",
+          "Description": "Scanned lists",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Reduces a list into a new value by combining each element with an accumulated result, produces a list of successive reduced values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "scannedKeys",
+      "Id": "83494b0dc63a469c9386ff4c9da3429e",
+      "Inputs": [
+        {
+          "Id": "48c848c38c7d4f3aa878d12a8fb714ea",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "increments",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "bbdef9a0c794450e918b508f004dc16a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "92b8499d96714730a5877d313783a7ff",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "e4f9f3b452594000aa58b78901e29c87",
+      "End": "0fb7a1e7ab20408aa4f020b8481b78e4",
+      "Id": "41c8913ccc3b4d0680de83dbe68f9065"
+    },
+    {
+      "Start": "40fe09338bb94f048b39b7dd9b0f489f",
+      "End": "050ec832aeb1455a95f382782f73d90f",
+      "Id": "0fb9c225d5494fd382dd16fb9973485c"
+    },
+    {
+      "Start": "39848062b8d546f0bec7a1fb61534852",
+      "End": "48c848c38c7d4f3aa878d12a8fb714ea",
+      "Id": "207badb7b2eb4da693982797e77fb507"
+    },
+    {
+      "Start": "92b8499d96714730a5877d313783a7ff",
+      "End": "c8eb92c5f4334f3f9849719f246aaec9",
+      "Id": "41851921577b47788c5e64aad85a7816"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 21.623815309590157,
+      "EyeY": 7.8984001198417033,
+      "EyeZ": 12.241373961967149,
+      "LookX": -0.23230915852128575,
+      "LookY": -0.17978338251292758,
+      "LookZ": -0.29369081073132897,
+      "UpX": -0.14236722455732553,
+      "UpY": 0.97331254558854252,
+      "UpZ": -0.17998406032700232
+    },
+    "NodeViews": [
+      {
+        "Id": "5e360f77bd6640af8f57c21869bc48d2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Number",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 134.0
+      },
+      {
+        "Id": "a8e06e96591a445f9240027664acc8b4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "+",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "6679dd6ba3044c1da202221b867751b3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "List.Scan",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 522.90201750464439,
+        "Y": 37.3379500290726
+      },
+      {
+        "Id": "83494b0dc63a469c9386ff4c9da3429e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 769.23535083797833,
+        "Y": -0.575953923686086
+      },
+      {
+        "Id": "bbdef9a0c794450e918b508f004dc16a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 309.93952483801297,
+        "Y": 237.4715622750179
+      }
+    ],
+    "Annotations": [],
+    "X": 111.91166666666663,
+    "Y": 197.12666666666664,
+    "Zoom": 1.1575
+  }
+}
