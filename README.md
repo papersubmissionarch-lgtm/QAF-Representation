@@ -27,6 +27,7 @@ The implementation is provided as a research proof-of-concept developed in Autod
 | `Symmetry-Based Balance Representation Script.dyn` | Generates candidate vertical symmetry axes, detects mirrored component correspondences, selects the principal symmetry axis, and computes the symmetry-based balance metric. |
 | `Diversity Representation Script.dyn` | Classifies façade components into element types, calculates their relative frequencies, and computes the normalised diversity metric using perplexity. |
 | `Complexity Representation Script.dyn` | Decomposes the façade into primary massing, secondary horizontal and vertical groups, and individual component-type groups to compute the normalised complexity metric. |
+| `CumulativeGroupKeys.dyf` | Custom Dynamo node used within the complexity script to generate cumulative grouping keys for width-based element grouping while preserving nested group structure. |
 
 ### Revit Models
 
@@ -42,6 +43,7 @@ The implementation is provided as a research proof-of-concept developed in Autod
 | `Questionnaire Responses (Group 1).xlsx` | Anonymised respondent-level data for Group 1, who evaluated the façade cases using 3D isometric representations. The file contains respondents’ professional characteristics, QAF ratings for all benchmark and real-world façade cases, summary statistics, BIM-generated values, rank-based comparison results, and value-difference metrics. Responses excluded during screening are retained in a separately identified section. |
 | `Questionnaire Responses (Group 2).xlsx` | Anonymised respondent-level data for Group 2, who evaluated the façade cases using 2D elevation representations. The file contains respondents’ professional characteristics, QAF ratings for all benchmark and real-world façade cases, summary statistics, BIM-generated values, rank-based comparison results, and value-difference metrics. Responses excluded during screening are retained in a separately identified section. |
 | `QAF Sensitivity Analysis.xlsx` | Complete case-level sensitivity-analysis data for regularity, symmetry-based balance, and complexity, including tested parameter settings, baseline comparisons, output deviations, rank stability, and reference-consistent complexity grouping ranges. |
+
 
 ## Software Requirements
 
