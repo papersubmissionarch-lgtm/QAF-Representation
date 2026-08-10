@@ -62,6 +62,8 @@ Because Revit model files are version-dependent, users should open the supplied 
 
 The scripts operate on explicitly modelled and semantically classified façade components.
 
+The analysed façade must be positioned on the XZ plane, facing the positive X-axis (+X).
+
 ### Analysis View
 
 The façade to be evaluated must be isolated within the dedicated Revit view:
@@ -69,8 +71,6 @@ The façade to be evaluated must be isolated within the dedicated Revit view:
 `QAFs Representation`
 
 Only elements visible within this view should contribute to the evaluation.
-
-The facade to be evaluated must be aligned with the XZ plane
 
 ### Component Classification
 
