@@ -144,7 +144,7 @@ The prototype implementation uses the following numerical settings:
 | Symmetry-based balance | Candidate-axis merging tolerance | 0.15 m |
 | Symmetry-based balance | On-axis positional tolerance | 0.15 m |
 | Symmetry-based balance | Mirrored-element matching tolerance | 0.35 m |
-| Regularity | Directional-distance rounding increment | 0.10 m |
+| Regularity | Directional-distance rounding increment | 2 decimal places |
 | Complexity | `GroupDepth` threshold | case-specific |
 | Complexity | `GroupWidth` threshold | case-specific |
 
