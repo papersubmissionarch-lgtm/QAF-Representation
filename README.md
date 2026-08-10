@@ -70,6 +70,8 @@ The façade to be evaluated must be isolated within the dedicated Revit view:
 
 Only elements visible within this view should contribute to the evaluation.
 
+The facade to be evaluated must be aligned with the XZ plane
+
 ### Component Classification
 
 The shared type parameter `TypeOfComponent` is used as a consistent classification key across native and extended Revit modelling approaches.
@@ -143,8 +145,8 @@ The prototype implementation uses the following numerical settings:
 | Symmetry-based balance | On-axis positional tolerance | 0.15 m |
 | Symmetry-based balance | Mirrored-element matching tolerance | 0.35 m |
 | Regularity | Directional-distance rounding increment | 0.10 m |
-| Complexity | `GroupDepth` threshold | 1.00 m |
-| Complexity | `GroupWidth` threshold | 19.00 m |
+| Complexity | `GroupDepth` threshold | case-specific |
+| Complexity | `GroupWidth` threshold | case-specific |
 
 The symmetry and regularity settings accommodate minor geometric inaccuracies in the prototype models. The complexity thresholds were selected according to the dimensional characteristics of the benchmark and real-world façade cases used in the study.
 
