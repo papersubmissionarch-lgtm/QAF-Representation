@@ -52,9 +52,7 @@ The implementation was developed and tested using:
 - Autodesk Revit 2021
 - Dynamo for Revit included with Autodesk Revit 2021
 
-The Dynamo graphs use standard Dynamo and Revit nodes only.
-
-No Python nodes or external Dynamo packages are required.
+The Dynamo graphs use standard Dynamo/Revit and Clockwork nodes, in addition to one project-specific custom node, CumulativeGroupKeys.dyf, supplied in this repository. No additional external Dynamo packages or Python nodes are required.
 
 Because Revit model files are version-dependent, users should open the supplied `.rvt` files using Revit 2021 or a later compatible version.
 
